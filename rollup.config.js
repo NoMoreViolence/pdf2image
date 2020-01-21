@@ -1,12 +1,9 @@
-import babel from "rollup-plugin-babel"
+import typescript from "rollup-plugin-typescript2"
 import { uglify } from "rollup-plugin-uglify"
 
 const base = {
   plugins: [
-    babel({
-      exclude: "node_modules/**",
-      runtimeHelpers: true
-    }),
+    typescript(),
     uglify()
   ]
 }
@@ -16,10 +13,10 @@ export default [
     {},
     base,
     {
-      input: "src/index.js",
+      input: "src/wrapper.ts",
       output: {
         format: "cjs",
-        file: "dist/index.min.js"
+        file: "dist/index.js"
       }
     }
   )

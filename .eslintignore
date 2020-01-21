@@ -1,1 +1,7 @@
-test
+/test
+/dist
+/lib
+/coverage
+/node_modules
+/package.json
+/rollup.config.js
